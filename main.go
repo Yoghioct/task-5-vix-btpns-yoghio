@@ -4,10 +4,15 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/jeypc/go-jwt-mux/controllers/authcontroller"
+	"github.com/jeypc/go-jwt-mux/models"
+
 	"github.com/gorilla/mux"
 )
 
 func main() {
+
+	models.ConnectDatabase()
 	r := mux.NewRouter()
 
 	r.HandleFunc("/login", authcontroller.Login).Methods("POST")
