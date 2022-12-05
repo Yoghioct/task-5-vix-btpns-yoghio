@@ -16,7 +16,7 @@ func ConnectDatabase() {
 	}
 
 	db.AutoMigrate(&User{})
-	// db.AutoMigrate(&Photos{})
+	db.AutoMigrate(&Photos{})
 
 	DB = db
 }
